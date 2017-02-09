@@ -13,9 +13,10 @@ function turnPage(nowPage)
 	
 	urls = urls+"?nowPage="+nowPage;
 	var queryJson = document.getElementById("queryJsonStr").value;
+//	console.log(queryJson);
 	if(queryJson!=null && queryJson!='')
 	{
-		urls = urls + "&queryJsonStr="+queryJson;
+		urls = urls + "&queryJsonStr=" + encodeURIComponent(queryJson);
 	}
 	
 	window.location.href = urls;

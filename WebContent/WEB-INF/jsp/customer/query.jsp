@@ -13,8 +13,9 @@
 	$().ready(function(){
 		$("#btn_query").click(function(){
 		var json = '{"customerId":"'+$("#customerId").val()+'"'+',"pwd":"'+$("#pwd").val()+'"'+',"showName":"'+$("#showName").val()+'"'+',"trueName":"'+$("#trueName").val()+'"'+'}';
+		var json2 = encodeURIComponent(json);
 		alert("*********"+json);
-			window.location.href = "${pageContext.request.contextPath}/customer/toList?queryJsonStr="+json;
+			window.location.href = "${pageContext.request.contextPath}/customer/toList?queryJsonStr="+json2;
 			//window.document.forms[0].action = "${pageContext.request.contextPath}/customer/toList?queryJsonStr="+json;
 			//window.document.forms[0].submit();
 		});		
